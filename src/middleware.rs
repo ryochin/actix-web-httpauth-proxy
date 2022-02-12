@@ -63,8 +63,8 @@ where
     /// ```
     /// # use actix_web::Error;
     /// # use actix_web::dev::ServiceRequest;
-    /// # use actix_web_httpauth::middleware::HttpAuthentication;
-    /// # use actix_web_httpauth::extractors::basic::BasicAuth;
+    /// # use actix_web_httpauth_proxy::middleware::HttpAuthentication;
+    /// # use actix_web_httpauth_proxy::extractors::basic::BasicAuth;
     /// // In this example validator returns immediately, but since it is required to return
     /// // anything that implements `IntoFuture` trait, it can be extended to query database or to
     /// // do something else in a async manner.
@@ -95,9 +95,9 @@ where
     /// ```
     /// # use actix_web::Error;
     /// # use actix_web::dev::ServiceRequest;
-    /// # use actix_web_httpauth::middleware::HttpAuthentication;
-    /// # use actix_web_httpauth::extractors::bearer::{Config, BearerAuth};
-    /// # use actix_web_httpauth::extractors::{AuthenticationError, AuthExtractorConfig};
+    /// # use actix_web_httpauth_proxy::middleware::HttpAuthentication;
+    /// # use actix_web_httpauth_proxy::extractors::bearer::{Config, BearerAuth};
+    /// # use actix_web_httpauth_proxy::extractors::{AuthenticationError, AuthExtractorConfig};
     /// async fn validator(req: ServiceRequest, credentials: BearerAuth) -> Result<ServiceRequest, Error> {
     ///     if credentials.token() == "mF_9.B5f-4.1JqM" {
     ///         Ok(req)

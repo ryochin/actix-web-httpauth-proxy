@@ -24,7 +24,7 @@ use crate::headers::authorization::scheme::Scheme;
 /// ```
 /// # use actix_web::http::header::Header;
 /// # use actix_web::{HttpRequest, Result};
-/// # use actix_web_httpauth::headers::authorization::{Authorization, Basic};
+/// # use actix_web_httpauth_proxy::headers::authorization::{Authorization, Basic};
 /// fn handler(req: HttpRequest) -> Result<String> {
 ///     let auth = Authorization::<Basic>::parse(&req)?;
 ///

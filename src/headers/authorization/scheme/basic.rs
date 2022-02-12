@@ -22,7 +22,7 @@ impl Basic {
     /// ## Example
     ///
     /// ```
-    /// # use actix_web_httpauth::headers::authorization::Basic;
+    /// # use actix_web_httpauth_proxy::headers::authorization::Basic;
     /// let credentials = Basic::new("Alladin", Some("open sesame"));
     /// ```
     pub fn new<U, P>(user_id: U, password: Option<P>) -> Basic

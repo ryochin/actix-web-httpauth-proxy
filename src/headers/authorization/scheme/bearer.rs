@@ -22,7 +22,7 @@ impl Bearer {
     /// ## Example
     ///
     /// ```
-    /// # use actix_web_httpauth::headers::authorization::Bearer;
+    /// # use actix_web_httpauth_proxy::headers::authorization::Bearer;
     /// let credentials = Bearer::new("mF_9.B5f-4.1JqM");
     /// ```
     pub fn new<T>(token: T) -> Bearer

@@ -12,20 +12,18 @@
 
 [package]
 edition = "2018"
-name = "actix-web-httpauth"
-version = "0.5.1"
+name = "actix-web-httpauth-proxy"
+version = "0.1.0"
 authors = ["svartalf <self@svartalf.info>", "Yuki Okushi <huyuumi.dev@gmail.com>"]
-description = "HTTP authentication schemes for Actix web"
-homepage = "https://actix.rs"
-documentation = "https://docs.rs/actix-web-httpauth/"
+description = "HTTP proxy authentication schemes for Actix web"
 readme = "README.md"
 keywords = ["http", "web", "framework", "authentication", "security"]
 categories = ["web-programming::http-server"]
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/actix/actix-extras.git"
+repository = "https://github.com/ryochin/actix-web-httpauth-proxy.git"
 
 [lib]
-name = "actix_web_httpauth"
+name = "actix_web_httpauth_proxy"
 path = "src/lib.rs"
 [dependencies.actix-web]
 version = "3.0.0"

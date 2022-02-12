@@ -16,10 +16,10 @@ use crate::utils;
 ///
 /// ```
 /// # use actix_web::{web, App, HttpRequest, HttpResponse, HttpServer};
-/// use actix_web_httpauth::headers::www_authenticate::bearer::{
+/// use actix_web_httpauth_proxy::headers::www_authenticate::bearer::{
 ///     Bearer, Error,
 /// };
-/// use actix_web_httpauth::headers::www_authenticate::WwwAuthenticate;
+/// use actix_web_httpauth_proxy::headers::www_authenticate::WwwAuthenticate;
 ///
 /// fn index(_req: HttpRequest) -> HttpResponse {
 ///     let challenge = Bearer::build()
@@ -52,7 +52,7 @@ impl Bearer {
     /// ## Example
     ///
     /// ```
-    /// # use actix_web_httpauth::headers::www_authenticate::bearer::{Bearer};
+    /// # use actix_web_httpauth_proxy::headers::www_authenticate::bearer::{Bearer};
     /// let challenge = Bearer::build()
     ///     .realm("Restricted area")
     ///     .scope("openid profile email")

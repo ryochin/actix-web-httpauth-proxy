@@ -18,8 +18,8 @@ use crate::utils;
 ///
 /// ```
 /// # use actix_web::{web, App, HttpRequest, HttpResponse, HttpServer};
-/// use actix_web_httpauth::headers::www_authenticate::basic::Basic;
-/// use actix_web_httpauth::headers::www_authenticate::WwwAuthenticate;
+/// use actix_web_httpauth_proxy::headers::www_authenticate::basic::Basic;
+/// use actix_web_httpauth_proxy::headers::www_authenticate::WwwAuthenticate;
 ///
 /// fn index(_req: HttpRequest) -> HttpResponse {
 ///     let challenge = Basic::with_realm("Restricted area");
@@ -43,7 +43,7 @@ impl Basic {
     /// ## Example
     ///
     /// ```
-    /// # use actix_web_httpauth::headers::www_authenticate::basic::Basic;
+    /// # use actix_web_httpauth_proxy::headers::www_authenticate::basic::Basic;
     /// let challenge = Basic::new();
     /// ```
     pub fn new() -> Basic {
@@ -55,12 +55,12 @@ impl Basic {
     /// ## Examples
     ///
     /// ```
-    /// # use actix_web_httpauth::headers::www_authenticate::basic::Basic;
+    /// # use actix_web_httpauth_proxy::headers::www_authenticate::basic::Basic;
     /// let challenge = Basic::with_realm("Restricted area");
     /// ```
     ///
     /// ```
-    /// # use actix_web_httpauth::headers::www_authenticate::basic::Basic;
+    /// # use actix_web_httpauth_proxy::headers::www_authenticate::basic::Basic;
     /// let my_realm = "Earth realm".to_string();
     /// let challenge = Basic::with_realm(my_realm);
     /// ```
