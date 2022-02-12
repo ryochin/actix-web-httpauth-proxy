@@ -267,7 +267,7 @@ mod tests {
             _extractor: PhantomData,
         };
 
-        let req = TestRequest::with_header("Authorization", "Bearer 1").to_srv_request();
+        let req = TestRequest::with_header("Proxy-Authorization", "Bearer 1").to_srv_request();
 
         let f = middleware.call(req);
 
@@ -290,15 +290,15 @@ mod tests {
             _extractor: PhantomData,
         };
 
-        let req = TestRequest::with_header("Authorization", "Bearer 1").to_srv_request();
+        let req = TestRequest::with_header("Proxy-Authorization", "Bearer 1").to_srv_request();
 
         let f1 = middleware.call(req);
 
-        let req = TestRequest::with_header("Authorization", "Bearer 1").to_srv_request();
+        let req = TestRequest::with_header("Proxy-Authorization", "Bearer 1").to_srv_request();
 
         let f2 = middleware.call(req);
 
-        let req = TestRequest::with_header("Authorization", "Bearer 1").to_srv_request();
+        let req = TestRequest::with_header("Proxy-Authorization", "Bearer 1").to_srv_request();
 
         let f3 = middleware.call(req);
 

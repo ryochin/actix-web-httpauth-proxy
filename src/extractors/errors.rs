@@ -20,11 +20,11 @@ pub struct AuthenticationError<C: Challenge> {
 impl<C: Challenge> AuthenticationError<C> {
     /// Creates new authentication error from the provided `challenge`.
     ///
-    /// By default returned error will resolve into the `HTTP 401` status code.
+    /// By default returned error will resolve into the `HTTP 407` status code.
     pub fn new(challenge: C) -> AuthenticationError<C> {
         AuthenticationError {
             challenge,
-            status_code: StatusCode::UNAUTHORIZED,
+            status_code: StatusCode::PROXY_AUTHENTICATION_REQUIRED,
         }
     }
 

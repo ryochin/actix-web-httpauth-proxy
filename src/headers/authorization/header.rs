@@ -2,7 +2,7 @@ use std::fmt;
 
 use actix_web::error::ParseError;
 use actix_web::http::header::{
-    Header, HeaderName, HeaderValue, IntoHeaderValue, AUTHORIZATION,
+    Header, HeaderName, HeaderValue, IntoHeaderValue, PROXY_AUTHORIZATION,
 };
 use actix_web::HttpMessage;
 
@@ -10,7 +10,7 @@ use crate::headers::authorization::scheme::Scheme;
 
 /// `Authorization` header, defined in [RFC 7235](https://tools.ietf.org/html/rfc7235#section-4.2)
 ///
-/// The "Authorization" header field allows a user agent to authenticate
+/// The "Proxy-Authorization" header field allows a user agent to authenticate
 /// itself with an origin server -- usually, but not necessarily, after
 /// receiving a 401 (Unauthorized) response.  Its value consists of
 /// credentials containing the authentication information of the user
@@ -77,11 +77,11 @@ where
 impl<S: Scheme> Header for Authorization<S> {
     #[inline]
     fn name() -> HeaderName {
-        AUTHORIZATION
+        PROXY_AUTHORIZATION
     }
 
     fn parse<T: HttpMessage>(msg: &T) -> Result<Self, ParseError> {
-        let header = msg.headers().get(AUTHORIZATION).ok_or(ParseError::Header)?;
+        let header = msg.headers().get(PROXY_AUTHORIZATION).ok_or(ParseError::Header)?;
         let scheme = S::parse(header).map_err(|_| ParseError::Header)?;
 
         Ok(Authorization(scheme))

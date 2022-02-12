@@ -1,6 +1,6 @@
 use actix_web::error::ParseError;
 use actix_web::http::header::{
-    Header, HeaderName, HeaderValue, IntoHeaderValue, WWW_AUTHENTICATE,
+    Header, HeaderName, HeaderValue, IntoHeaderValue, PROXY_AUTHENTICATE,
 };
 use actix_web::HttpMessage;
 
@@ -16,7 +16,7 @@ pub struct WwwAuthenticate<C: Challenge>(pub C);
 
 impl<C: Challenge> Header for WwwAuthenticate<C> {
     fn name() -> HeaderName {
-        WWW_AUTHENTICATE
+        PROXY_AUTHENTICATE
     }
 
     fn parse<T: HttpMessage>(_msg: &T) -> Result<Self, ParseError> {
